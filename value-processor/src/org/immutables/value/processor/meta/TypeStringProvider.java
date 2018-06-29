@@ -384,14 +384,15 @@ class TypeStringProvider {
   }
 
   private void assignElementNullness(String annotationString) {
-    if (annotationString != null) {
+    nullElements = NullElements.SKIP;
+    /*if (annotationString != null) {
       if (annotationString.contains(EPHEMERAL_ANNOTATION_NULLABLE)
           || annotationString.contains(EPHEMERAL_ANNOTATION_ALLOW_NULLS)) {
         nullElements = NullElements.ALLOW;
       } else if (annotationString.contains(EPHEMERAL_ANNOTATION_SKIP_NULLS)) {
         nullElements = NullElements.SKIP;
       }
-    }
+    }*/
   }
 
   private void cutTypeArgument(TypeMirror type, int mark) {
